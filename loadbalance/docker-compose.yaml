@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  test1:
+    build:
+      context: ./node1
+      dockerfile: dockerfile
+    ports:
+      - '127.0.0.1:8000:80'
+    cpus: ".25" # CPU 프로세스 사용률 25%로 제한
+    mem_limit: "2g" # 2GB로 메모리 제한
+  test2:
+    build:
+      context: ./node2
+      dockerfile: dockerfile
+    ports:
+      - '127.0.0.1:8001:80'
+    cpus: ".25" # CPU 프로세스 사용률 25%로 제한
+    mem_limit: "2g" # 2GB로 메모리 제한
+  test3:
+    build:
+      context: ./node3
+      dockerfile: dockerfile
+    ports:
+      - '127.0.0.1:8002:80'
+    cpus: ".25" # CPU 프로세스 사용률 25%로 제한
+    mem_limit: "2g" # 2GB로 메모리 제한
