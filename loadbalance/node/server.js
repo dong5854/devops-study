@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <section>
-          <h2>NODE_SERVER_3</h2>
+          <h2>NODE_SERVER_${process.env.NODE_NUM}</h2>
         </section>
       </body>
     </html>
