@@ -14,17 +14,13 @@ app.use(
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+  let date = Date.now()
+  res.setHeader("Content-Type", "application/json");
   res.send(`
-    <html>
-      <head>
-        <link rel="stylesheet" href="styles.css">
-      </head>
-      <body>
-        <section>
-          <h2>NODE_SERVER_${process.env.NODE_NUM}</h2>
-        </section>
-      </body>
-    </html>
+  {
+          "NODE_SERVER": "${process.env.NODE_NUM}",
+          "time": ${date}
+  }
   `);
 });
 
