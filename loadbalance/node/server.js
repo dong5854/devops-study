@@ -3,8 +3,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-let userGoal = 'Learn Docker!';
-
 app.use(
   bodyParser.urlencoded({
     extended: false,
@@ -15,11 +13,13 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   let date = Date.now()
+  let forwardedIpsStr = req.header('x-forwarded-for');
   res.setHeader("Content-Type", "application/json");
   res.send(`
   {
           "NODE_SERVER": "${process.env.NODE_NUM}",
-          "time": ${date}
+          "time": ${date},
+          "forwardedIps": ${forwardedIpsStr}
   }
   `);
 });
