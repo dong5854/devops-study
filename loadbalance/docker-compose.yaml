@@ -35,6 +35,8 @@ services:
       dockerfile: dockerfile
     env_file:
       - ./env/node1.env
+    volumes:
+      - ./node/server.js:/app/server.js
     cpus: ".25" # CPU 프로세스 사용률 25%로 제한
     mem_limit: "2g" # 2GB로 메모리 제한
   test2:
@@ -43,6 +45,8 @@ services:
       dockerfile: dockerfile
     env_file:
       - ./env/node2.env
+    volumes:
+      - ./node/server.js:/app/server.js
     cpus: ".25" # CPU 프로세스 사용률 25%로 제한
     mem_limit: "2g" # 2GB로 메모리 제한
   test3:
@@ -51,6 +55,8 @@ services:
       dockerfile: dockerfile
     env_file:
       - ./env/node3.env
+    volumes:
+      - ./node/server.js:/app/server.js
     cpus: ".25" # CPU 프로세스 사용률 25%로 제한
     mem_limit: "2g" # 2GB로 메모리 제한
   test4:
@@ -67,6 +73,8 @@ services:
       dockerfile: dockerfile
     env_file:
       - ./env/node5.env
+    volumes:
+      - ./node/server.js:/app/server.js
     cpus: ".25" # CPU 프로세스 사용률 25%로 제한
     mem_limit: "2g" # 2GB로 메모리 제한
   test6:
@@ -75,5 +83,7 @@ services:
       dockerfile: dockerfile
     env_file:
       - ./env/node6.env
+    volumes:
+      - ./node/server.js:/app/server.js
     cpus: ".25" # CPU 프로세스 사용률 25%로 제한
     mem_limit: "2g" # 2GB로 메모리 제한
