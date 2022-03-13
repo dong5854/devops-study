@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-let userGoal = 'Learn Docker!!!!!!!!';
+let userGoal = 'Enter Your Goal';
 
 app.use(
   bodyParser.urlencoded({
@@ -37,9 +37,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/store-goal', (req, res) => {
-  const enteredGoal = req.body.goal;
-  console.log(enteredGoal);
-  userGoal = enteredGoal;
+  const REDIS = require('redis');
+  const redis = REDIS.createClient(6379, '127.0.0.1');
   res.redirect('/');
 });
 
