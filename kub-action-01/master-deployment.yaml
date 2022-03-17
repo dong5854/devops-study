@@ -25,6 +25,6 @@ spec:
       labels:
         app: second-app
     spec:
-      containers:
-      - name: second-node
+        containers:
+        - name: second-node
         image: dong5854/kub-first-app:3
