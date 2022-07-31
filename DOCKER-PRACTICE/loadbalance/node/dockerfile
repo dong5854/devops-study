@@ -1,0 +1,16 @@
+FROM node
+
+WORKDIR /app
+
+COPY package.json /app
+
+RUN npm install
+
+# RUN apt-get update
+# RUN apt-get install vim
+
+COPY . /app
+
+EXPOSE 80
+
+CMD ["npm", "start"]
